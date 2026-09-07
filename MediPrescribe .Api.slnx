@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="MediPrescribe.Api/MediPrescribe.Api.csproj" />
+  <Project Path="MediPrescribe.Application/MediPrescribe.Application.csproj" />
+  <Project Path="MediPrescribe.Dashboard/MediPrescribe.Dashboard.csproj" />
+  <Project Path="MediPrescribe.Dashboard.Application/MediPrescribe.Dashboard.Application.csproj" />
+  <Project Path="MediPrescribe.Dashboard.Infrastructure/MediPrescribe.Dashboard.Infrastructure.csproj" />
+  <Project Path="MediPrescribe.Domain/MediPrescribe.Domain.csproj" />
+  <Project Path="MediPrescribe.Infrastructure/MediPrescribe.Infrastructure.csproj" />
+</Solution>

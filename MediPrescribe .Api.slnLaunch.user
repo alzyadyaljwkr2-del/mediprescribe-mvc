@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MediPrescribe.Api\\MediPrescribe.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MediPrescribe.Dashboard\\MediPrescribe.Dashboard.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

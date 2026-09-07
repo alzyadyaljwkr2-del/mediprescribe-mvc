@@ -1,0 +1,45 @@
+@model MediPrescribe.Dashboard.Models.DoctorViewModel
+@{
+    ViewData["Title"] = "إضافة طبيب";
+}
+
+<div class="form-card">
+    <h3 class="form-card-title">
+        <i class="fa-solid fa-user-doctor"></i>
+        إضافة طبيب جديد
+    </h3>
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger-msg"></div>
+
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" placeholder="أدخل اسم الطبيب" />
+            <span asp-validation-for="Name" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Specialization" class="form-label"></label>
+            <input asp-for="Specialization" class="form-control" placeholder="أدخل التخصص" />
+            <span asp-validation-for="Specialization" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" type="email" placeholder="example@domain.com" />
+            <span asp-validation-for="Email" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-check"></i> حفظ البيانات
+            </button>
+            <a asp-action="Index" class="btn btn-outline">
+                <i class="fa-solid fa-xmark"></i> إلغاء
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

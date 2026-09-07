@@ -1,0 +1,151 @@
+@model IEnumerable<MediPrescribe.Dashboard.Models.DoctorViewModel>
+@{
+    ViewData["Title"] = "الأطباء";
+}
+
+<!-- Toolbar -->
+<div class="toolbar-card">
+    <div class="toolbar-right">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> إضافة طبيب
+        </a>
+    </div>
+    <div class="toolbar-left">
+        <button class="btn btn-outline">
+            <i class="fa-solid fa-filter"></i> تصفية
+        </button>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="بحث في الأطباء..." id="searchInput" onkeyup="filterTable()" />
+        </div>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-info">
+            <h4>إجمالي الأطباء</h4>
+            <div class="value">@Model.Count()</div>
+        </div>
+        <div class="stat-icon purple">
+            <i class="fa-solid fa-user-doctor"></i>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-info">
+            <h4>الأطباء النشطون</h4>
+            <div class="value">@Model.Count()</div>
+        </div>
+        <div class="stat-icon green">
+            <i class="fa-solid fa-user-check"></i>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-info">
+            <h4>التخصصات</h4>
+            <div class="value">@Model.Select(d => d.Specialization).Distinct().Count()</div>
+        </div>
+        <div class="stat-icon teal">
+            <i class="fa-solid fa-stethoscope"></i>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-info">
+            <h4>البريد الإلكتروني</h4>
+            <div class="value">@Model.Count(d => !string.IsNullOrEmpty(d.Email))</div>
+        </div>
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="table-card">
+    <div class="table-header">
+        <h3>
+            <i class="fa-solid fa-user-doctor"></i>
+            قائمة الأطباء
+        </h3>
+    </div>
+    <div class="table-responsive">
+        <table class="data-table" id="doctorsTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>الطبيب</th>
+                    <th>التخصص</th>
+                    <th>البريد الإلكتروني</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var doctor in Model)
+                {
+                    <tr>
+                        <td>@doctor.Id</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                    @doctor.Name.Substring(0, Math.Min(1, doctor.Name.Length))
+                                </div>
+                                <span style="font-weight: 600; color: var(--text-main);">د. @doctor.Name</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="status-badge status-pending">@doctor.Specialization</span>
+                        </td>
+                        <td>@(string.IsNullOrEmpty(doctor.Email) ? "غير متوفر" : doctor.Email)</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a asp-action="Details" asp-route-id="@doctor.Id" class="action-btn view" title="عرض">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@doctor.Id" class="action-btn edit" title="تعديل">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <form asp-action="Delete" asp-route-id="@doctor.Id" method="post" style="display: inline;" onsubmit="return confirm('هل أنت متأكد من حذف هذا الطبيب؟');">
+                                    <button type="submit" class="action-btn delete" title="حذف">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="table-empty">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            لا توجد بيانات حالياً
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function filterTable() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById('doctorsTable');
+            var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+                for (var j = 0; j < cells.length; j++) {
+                    if (cells[j].textContent.toLowerCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        }
+    </script>
+}

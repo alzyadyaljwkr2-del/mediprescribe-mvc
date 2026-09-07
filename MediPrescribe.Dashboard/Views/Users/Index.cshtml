@@ -1,0 +1,140 @@
+@model IEnumerable<MediPrescribe.Dashboard.Models.UserViewModel>
+@{
+    ViewData["Title"] = "إدارة المستخدمين";
+    string RoleName(UserRole role) => role switch
+    {
+        UserRole.Admin => "مدير",
+        UserRole.Doctor => "طبيب",
+        UserRole.Patient => "مريض",
+        UserRole.Pharmacist => "صيدلي",
+        _ => "غير معروف"
+    };
+}
+@using MediPrescribe.Dashboard.Application.DTOs
+
+<!-- Toolbar -->
+<div class="toolbar-card">
+    <div class="toolbar-right">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> إضافة مستخدم
+        </a>
+    </div>
+    <div class="toolbar-left">
+        <button class="btn btn-outline">
+            <i class="fa-solid fa-filter"></i> تصفية
+        </button>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="بحث في المستخدمين..." id="searchInput" onkeyup="filterTable()" />
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="table-card">
+    <div class="table-header">
+        <h3>
+            <i class="fa-solid fa-users"></i>
+            قائمة المستخدمين
+        </h3>
+    </div>
+    <div class="table-responsive">
+        <table class="data-table" id="usersTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>الاسم</th>
+                    <th>البريد</th>
+                    <th>الهاتف</th>
+                    <th>الدور</th>
+                    <th>الحالة</th>
+                    <th>تاريخ الإنشاء</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                    @(string.IsNullOrEmpty(user.FullName) ? "?" : user.FullName.Substring(0, 1))
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: var(--text-main);">@user.FullName</div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">@user.Username</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>@(string.IsNullOrEmpty(user.Email) ? "غير متوفر" : user.Email)</td>
+                        <td>@(string.IsNullOrEmpty(user.Phone) ? "غير متوفر" : user.Phone)</td>
+                        <td>
+                            <span class="status-badge @(user.Role == UserRole.Admin ? "status-warning" : user.Role == UserRole.Doctor ? "status-pending" : user.Role == UserRole.Pharmacist ? "status-success" : "status-danger")">
+                                @RoleName(user.Role)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="status-badge @(user.IsActive ? "status-success" : "status-danger")">
+                                @(user.IsActive ? "نشط" : "معطل")
+                            </span>
+                        </td>
+                        <td>@user.CreatedAt.ToString("yyyy-MM-dd")</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a asp-action="Details" asp-route-id="@user.Id" class="action-btn view" title="عرض">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@user.Id" class="action-btn edit" title="تعديل">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <form asp-action="ToggleStatus" asp-route-id="@user.Id" method="post" style="display: inline;" onsubmit="return confirm('هل تريد تغيير حالة هذا المستخدم؟');">
+                                    <button type="submit" class="action-btn @(user.IsActive ? "delete" : "view")" title="@(user.IsActive ? "تعطيل" : "تفعيل")">
+                                        <i class="fa-solid @(user.IsActive ? "fa-user-slash" : "fa-user-check")"></i>
+                                    </button>
+                                </form>
+                                <form asp-action="Delete" asp-route-id="@user.Id" method="post" style="display: inline;" onsubmit="return confirm('هل أنت متأكد من حذف هذا المستخدم؟');">
+                                    <button type="submit" class="action-btn delete" title="حذف">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="8" class="table-empty">
+                            <i class="fa-solid fa-users"></i>
+                            لا توجد بيانات حالياً
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function filterTable() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById('usersTable');
+            var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+                for (var j = 0; j < cells.length; j++) {
+                    if (cells[j].textContent.toLowerCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        }
+    </script>
+}

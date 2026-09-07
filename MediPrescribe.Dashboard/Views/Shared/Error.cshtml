@@ -1,0 +1,21 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "خطأ";
+}
+
+<div class="card" style="max-width: 600px; margin: 40px auto; text-align: center;">
+    <div style="padding: 20px;">
+        <i class="fa-solid fa-circle-exclamation" style="font-size: 3rem; color: var(--status-danger); opacity: 0.5; margin-bottom: 16px;"></i>
+        <h2 style="font-size: 1.3rem; margin-bottom: 8px;">حدث خطأ!</h2>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">عذراً، حدث خطأ أثناء معالجة طلبك.</p>
+        @if (Model?.ShowRequestId == true)
+        {
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+                <strong>Request ID:</strong> <code>@Model.RequestId</code>
+            </p>
+        }
+        <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary" style="margin-top: 16px;">
+            <i class="fa-solid fa-home"></i> العودة للرئيسية
+        </a>
+    </div>
+</div>

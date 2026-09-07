@@ -1,0 +1,113 @@
+@model IEnumerable<MediPrescribe.Dashboard.Models.PrescriptionViewModel>
+@{
+    ViewData["Title"] = "الوصفات الطبية";
+}
+
+<!-- Toolbar -->
+<div class="toolbar-card">
+    <div class="toolbar-right">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> وصفة جديدة
+        </a>
+    </div>
+    <div class="toolbar-left">
+        <button class="btn btn-outline">
+            <i class="fa-solid fa-filter"></i> تصفية
+        </button>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="بحث برقم الوصفة أو المريض..." id="searchInput" onkeyup="filterTable()" />
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="table-card">
+    <div class="table-header">
+        <h3>
+            <i class="fa-solid fa-file-medical"></i>
+            قائمة الوصفات الطبية
+        </h3>
+    </div>
+    <div class="table-responsive">
+        <table class="data-table" id="prescriptionsTable">
+            <thead>
+                <tr>
+                    <th>رقم الوصفة</th>
+                    <th>المريض</th>
+                    <th>الطبيب</th>
+                    <th>الأدوية</th>
+                    <th>الصورة</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td style="color: var(--primary-color); font-weight: 600;">RX-2026-@p.Id.ToString("D4")</td>
+                        <td style="font-weight: 500; color: var(--text-main);">@(p.Patient?.Name ?? "غير معروف")</td>
+                        <td>د. @(p.Doctor?.Name ?? "غير معروف")</td>
+                        <td>@p.MedicationDetails</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(p.ImageUrl))
+                            {
+                                <img src="@p.ImageUrl" alt="صورة الوصفة" class="table-thumb" />
+                            }
+                            else
+                            {
+                                <span class="table-thumb-empty"><i class="fa-solid fa-image"></i></span>
+                            }
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <a asp-action="Details" asp-route-id="@p.Id" class="action-btn view" title="عرض">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@p.Id" class="action-btn edit" title="تعديل">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <form asp-action="Delete" asp-route-id="@p.Id" method="post" style="display: inline;" onsubmit="return confirm('هل أنت متأكد من حذف هذه الوصفة؟');">
+                                    <button type="submit" class="action-btn delete" title="حذف">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="table-empty">
+                            <i class="fa-solid fa-file-medical"></i>
+                            لا توجد وصفات حالياً
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function filterTable() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById('prescriptionsTable');
+            var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+                for (var j = 0; j < cells.length; j++) {
+                    if (cells[j].textContent.toLowerCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        }
+    </script>
+}

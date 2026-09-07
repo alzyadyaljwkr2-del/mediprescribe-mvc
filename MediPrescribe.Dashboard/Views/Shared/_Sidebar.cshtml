@@ -1,0 +1,93 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var prescriptionsCount = 0;
+    if (ViewData["PrescriptionsCount"] is int count)
+    {
+        prescriptionsCount = count;
+    }
+}
+
+<aside class="sidebar" id="sidebar">
+    <!-- Logo Section -->
+    <div class="sidebar-logo">
+        <div class="sidebar-logo-img">
+            <img src="~/images/logo.jpg" alt="MediPrescribe Logo" />
+        </div>
+        <div class="sidebar-logo-text">
+            <span class="sidebar-logo-name">MediPrescribe</span>
+            <span class="sidebar-logo-desc">نظام الوصفات الطبي الذكي</span>
+        </div>
+    </div>
+
+    <!-- Main Menu -->
+    <div class="sidebar-section-label">القائمة الرئيسية</div>
+
+    <nav class="sidebar-nav">
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="@Url.Action("Index", "Dashboard")" class="nav-item @(currentController == "Dashboard" ? "active" : "")">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>لوحة التحكم</span>
+            </a>
+            <a href="@Url.Action("Index", "Users")" class="nav-item @(currentController == "Users" ? "active" : "")">
+                <i class="fa-solid fa-users"></i>
+                <span>إدارة المستخدمين</span>
+            </a>
+        }
+        @if (User.IsInRole("Admin") || User.IsInRole("Doctor"))
+        {
+            <a href="@Url.Action("Index", "Doctors")" class="nav-item @(currentController == "Doctors" ? "active" : "")">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span>الأطباء</span>
+            </a>
+            <a href="@Url.Action("Index", "Patients")" class="nav-item @(currentController == "Patients" ? "active" : "")">
+                <i class="fa-solid fa-bed-pulse"></i>
+                <span>المرضى</span>
+            </a>
+        }
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="@Url.Action("Index", "Pharmacists")" class="nav-item @(currentController == "Pharmacists" ? "active" : "")">
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+                <span>الصيادلة</span>
+            </a>
+        }
+        <a href="@Url.Action("Index", "Prescriptions")" class="nav-item @(currentController == "Prescriptions" ? "active" : "")">
+            <i class="fa-solid fa-file-medical"></i>
+            <span>الوصفات الطبية</span>
+            @if (prescriptionsCount > 0)
+            {
+                <span class="nav-badge">@prescriptionsCount</span>
+            }
+        </a>
+    </nav>
+
+    <!-- Settings Section -->
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="sidebar-section-label">الإعدادات</div>
+        <nav class="sidebar-nav" style="padding-bottom: 8px;">
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+    }
+
+    <!-- User Footer -->
+    <div class="sidebar-footer">
+        <div class="sidebar-avatar">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <div class="sidebar-user-info">
+            <div class="sidebar-user-name">@(User.Identity?.Name ?? "مستخدم")</div>
+            <div class="sidebar-user-email">@(User.IsInRole("Admin") ? "مدير النظام" : "")</div>
+        </div>
+        <form asp-controller="Account" asp-action="Logout" method="post" style="display: inline;">
+            <button type="submit" class="sidebar-logout" title="تسجيل الخروج">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>

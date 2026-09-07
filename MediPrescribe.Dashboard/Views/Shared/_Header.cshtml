@@ -1,0 +1,40 @@
+<header class="header">
+    <div class="header-right">
+        <button class="menu-toggle" onclick="toggleSidebar()" aria-label="القائمة">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="header-title">
+            <h1 class="header-page-title">@ViewData["Title"]</h1>
+            <div class="header-breadcrumb">
+                <a asp-controller="Dashboard" asp-action="Index">
+                    <i class="fa-solid fa-house" style="font-size: 0.7rem;"></i>
+                    الرئيسية
+                </a>
+                <span class="separator"><i class="fa-solid fa-chevron-left"></i></span>
+                <span class="current">@ViewData["Title"]</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-left">
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="بحث..." />
+        </div>
+        <div class="header-actions">
+            <button class="notification-btn" title="الإشعارات">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+            <div class="header-user">
+                <div class="header-user-avatar">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div class="header-user-info">
+                    <span class="header-user-name">@(User.Identity?.Name ?? "")</span>
+                    <span class="header-user-role">@(User.IsInRole("Admin") ? "مدير" : User.IsInRole("Doctor") ? "طبيب" : User.IsInRole("Pharmacist") ? "صيدلي" : User.IsInRole("Patient") ? "مريض" : "مستخدم")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

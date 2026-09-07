@@ -1,0 +1,63 @@
+@model MediPrescribe.Dashboard.Models.UserViewModel
+@{
+    ViewData["Title"] = "تعديل مستخدم";
+}
+
+<div class="form-card">
+    <h3 class="form-card-title">
+        <i class="fa-solid fa-user-pen"></i>
+        تعديل المستخدم: @Model.FullName
+    </h3>
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger-msg"></div>
+
+        <div class="form-group">
+            <label class="form-label">اسم المستخدم</label>
+            <input class="form-control" value="@Model.Username" readonly />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FullName" class="form-label"></label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" type="email" />
+            <span asp-validation-for="Email" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone" class="form-label"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="form-label"></label>
+            <input asp-for="Password" class="form-control" type="password" placeholder="اتركه فارغاً للإبقاء على كلمة المرور الحالية" />
+            <span asp-validation-for="Password" class="text-danger-msg"></span>
+            <small style="color: var(--text-muted); font-size: 0.75rem;">اترك هذا الحقل فارغاً للاحتفاظ بكلمة المرور الحالية</small>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">الدور</label>
+            <select asp-for="Role" asp-items="ViewBag.Roles" class="form-control" id="roleSelect"></select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-check"></i> حفظ التعديلات
+            </button>
+            <a asp-action="Index" class="btn btn-outline">
+                <i class="fa-solid fa-xmark"></i> إلغاء
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+@model MediPrescribe.Dashboard.Models.PharmacistViewModel
+@{
+    ViewData["Title"] = "تفاصيل الصيدلي";
+}
+
+<div class="details-card">
+    <div class="details-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #059669; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">
+                @(string.IsNullOrEmpty(Model.PharmacyName) ? "؟" : Model.PharmacyName.Substring(0, 1))
+            </div>
+            <div>
+                <h3>@Model.PharmacyName</h3>
+                <span>صيدلي</span>
+            </div>
+        </div>
+        <a asp-action="Index" class="btn btn-outline">
+            <i class="fa-solid fa-arrow-right"></i> عودة
+        </a>
+    </div>
+
+    <div class="details-grid">
+        <div class="detail-item">
+            <span class="detail-label">رقم الترخيص</span>
+            <span class="detail-value">@Model.LicenseNumber</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">الهاتف</span>
+            <span class="detail-value">@(string.IsNullOrEmpty(Model.Phone) ? "غير متوفر" : Model.Phone)</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">العنوان</span>
+            <span class="detail-value">@(string.IsNullOrEmpty(Model.Address) ? "غير متوفر" : Model.Address)</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">معرف المستخدم</span>
+            <span class="detail-value">@Model.UserId</span>
+        </div>
+    </div>
+</div>

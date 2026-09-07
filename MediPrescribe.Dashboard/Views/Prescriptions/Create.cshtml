@@ -1,0 +1,83 @@
+@model MediPrescribe.Dashboard.Models.PrescriptionViewModel
+@{
+    ViewData["Title"] = "إضافة وصفة جديدة";
+}
+
+<div class="form-card">
+    <h3 class="form-card-title">
+        <i class="fa-solid fa-file-medical"></i>
+        إضافة وصفة جديدة
+    </h3>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger-msg"></div>
+
+        <div class="form-group">
+            <label asp-for="DoctorId" class="form-label"></label>
+            <select asp-for="DoctorId" asp-items="ViewBag.Doctors" class="form-control">
+                <option value="">-- اختر الطبيب --</option>
+            </select>
+            <span asp-validation-for="DoctorId" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PatientId" class="form-label"></label>
+            <select asp-for="PatientId" asp-items="ViewBag.Patients" class="form-control">
+                <option value="">-- اختر المريض --</option>
+            </select>
+            <span asp-validation-for="PatientId" class="text-danger-msg"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MedicationDetails" class="form-label"></label>
+            <textarea asp-for="MedicationDetails" class="form-control" rows="4"
+                placeholder="أدخل تفاصيل الأدوية..."></textarea>
+            <span asp-validation-for="MedicationDetails" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">صورة الوصفة</label>
+            <div class="upload-area" id="uploadArea" onclick="document.getElementById('imageInput').click()">
+                <input type="file" id="imageInput" name="ImageFile" accept="image/*" style="display:none"
+                    onchange="previewImage(event)" />
+                <div class="upload-placeholder" id="uploadPlaceholder">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>اضغط لاختيار صورة من جهازك</p>
+                    <span>PNG, JPG, WEBP - الحد الأقصى 5 ميجابايت</span>
+                </div>
+                <img id="imagePreview" class="upload-preview" style="display:none" />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-check"></i> حفظ الوصفة
+            </button>
+            <a asp-action="Index" class="btn btn-outline">
+                <i class="fa-solid fa-xmark"></i> إلغاء
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function previewImage(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+            if (file.size > 5 * 1024 * 1024) {
+                alert('الحد الأقصى لحجم الصورة هو 5 ميجابايت');
+                event.target.value = '';
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var preview = document.getElementById('imagePreview');
+                var placeholder = document.getElementById('uploadPlaceholder');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                placeholder.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+}

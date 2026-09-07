@@ -1,0 +1,55 @@
+@model MediPrescribe.Dashboard.Models.UserViewModel
+@{
+    ViewData["Title"] = "تفاصيل المستخدم";
+    string RoleName(UserRole role) => role switch
+    {
+        UserRole.Admin => "مدير",
+        UserRole.Doctor => "طبيب",
+        UserRole.Patient => "مريض",
+        UserRole.Pharmacist => "صيدلي",
+        _ => "غير معروف"
+    };
+}
+@using MediPrescribe.Dashboard.Application.DTOs
+
+<div class="details-card">
+    <div class="details-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0;">
+                @(string.IsNullOrEmpty(Model.FullName) ? "?" : Model.FullName.Substring(0, 1))
+            </div>
+            <div>
+                <h3>@Model.FullName</h3>
+                <span>@Model.Username</span>
+                <span class="status-badge @(Model.IsActive ? "status-success" : "status-danger")">@(Model.IsActive ? "نشط" : "معطل")</span>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                <i class="fa-solid fa-pen"></i> تعديل
+            </a>
+            <a asp-action="Index" class="btn btn-outline">
+                <i class="fa-solid fa-arrow-right"></i> عودة
+            </a>
+        </div>
+    </div>
+
+    <div class="details-grid">
+        <div class="detail-item">
+            <span class="detail-label">البريد الإلكتروني</span>
+            <span class="detail-value">@(string.IsNullOrEmpty(Model.Email) ? "غير متوفر" : Model.Email)</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">الهاتف</span>
+            <span class="detail-value">@(string.IsNullOrEmpty(Model.Phone) ? "غير متوفر" : Model.Phone)</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">الدور</span>
+            <span class="detail-value">@RoleName(Model.Role)</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">تاريخ الإنشاء</span>
+            <span class="detail-value">@Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")</span>
+        </div>
+    </div>
+</div>

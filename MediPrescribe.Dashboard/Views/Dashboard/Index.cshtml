@@ -1,0 +1,225 @@
+@model MediPrescribe.Dashboard.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "لوحة التحكم";
+}
+
+<div class="dashboard-page">
+
+    <!-- =========================
+         Statistics
+    ========================== -->
+    <section class="stats-grid">
+
+        <!-- Total Users -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="stat-title">إجمالي المستخدمين</span>
+                <strong class="stat-value">@Model.TotalUsers</strong>
+            </div>
+            <div class="stat-icon stat-icon-blue">
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+
+        <!-- Total Prescriptions -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="stat-title">إجمالي الوصفات</span>
+                <strong class="stat-value">@Model.TotalPrescriptions</strong>
+            </div>
+            <div class="stat-icon stat-icon-blue">
+                <i class="fa-solid fa-file-medical"></i>
+            </div>
+        </div>
+
+        <!-- Doctors -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="stat-title">الأطباء</span>
+                <strong class="stat-value">@Model.TotalDoctors</strong>
+            </div>
+            <div class="stat-icon stat-icon-purple">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+        </div>
+
+        <!-- Patients -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="stat-title">المرضى</span>
+                <strong class="stat-value">@Model.TotalPatients</strong>
+            </div>
+            <div class="stat-icon stat-icon-green">
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+        </div>
+
+        <!-- Pharmacists -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="stat-title">الصيادلة</span>
+                <strong class="stat-value">@Model.TotalPharmacists</strong>
+            </div>
+            <div class="stat-icon stat-icon-orange">
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+            </div>
+        </div>
+
+        <!-- Admins -->
+        <div class="stat-card">
+            <div class="stat-content">
+                <span class="stat-title">المدراء</span>
+                <strong class="stat-value">@Model.TotalAdmins</strong>
+            </div>
+            <div class="stat-icon stat-icon-red">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Charts
+    ========================== -->
+    <section class="dashboard-charts">
+
+        <!-- Prescription Activity -->
+        <div class="dashboard-card activity-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>نشاط الوصفات</h3>
+                    <span>آخر 7 أشهر</span>
+                </div>
+
+                <span class="chart-label">أحدث</span>
+            </div>
+
+            <div class="chart-empty">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>بيانات غير متوفرة حالياً</span>
+            </div>
+
+        </div>
+
+
+        <!-- Prescription Status -->
+        <div class="dashboard-card status-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>حالة الوصفات</h3>
+                    <span>التوزيع النسبي</span>
+                </div>
+            </div>
+
+            <div class="chart-empty">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>بيانات غير متوفرة حالياً</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Recent Prescriptions
+    ========================== -->
+    <section class="dashboard-card recent-card">
+
+        <div class="table-heading">
+
+            <div>
+                <h3>
+                    <i class="fa-solid fa-file-medical"></i>
+                    أحدث الوصفات الطبية
+                </h3>
+            </div>
+
+            <a asp-controller="Prescriptions"
+               asp-action="Index"
+               class="view-all">
+                عرض الكل
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table class="dashboard-table">
+
+                <thead>
+                    <tr>
+                        <th>رقم الوصفة</th>
+                        <th>المريض</th>
+                        <th>الطبيب</th>
+                        <th>الأدوية</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (Model.RecentPrescriptions != null &&
+                                        Model.RecentPrescriptions.Any())
+                    {
+                        foreach (var p in Model.RecentPrescriptions)
+                        {
+                            <tr>
+
+                                <td>
+                                    <span class="prescription-number">
+                                        RX-2026-@p.Id.ToString("D4")
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        @(p.Patient?.Name ?? "غير معروف")
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    د.
+                                    @(p.Doctor?.Name ?? "غير معروف")
+                                </td>
+
+                                <td>
+                                    <span class="medication-text">
+                                        @(p.MedicationDetails ?? "غير متوفر")
+                                    </span>
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+
+                                <div class="empty-table">
+                                    <i class="fa-solid fa-file-circle-xmark"></i>
+
+                                    <span>
+                                        لا توجد وصفات حالياً
+                                    </span>
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>

@@ -1,0 +1,45 @@
+@model MediPrescribe.Dashboard.Models.PatientViewModel
+@{
+    ViewData["Title"] = "إضافة مريض";
+}
+
+<div class="form-card">
+    <h3 class="form-card-title">
+        <i class="fa-solid fa-bed-pulse"></i>
+        إضافة مريض جديد
+    </h3>
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger-msg"></div>
+
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" placeholder="أدخل اسم المريض" />
+            <span asp-validation-for="Name" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone" class="form-label"></label>
+            <input asp-for="Phone" class="form-control" placeholder="05XXXXXXXX" />
+            <span asp-validation-for="Phone" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Address" class="form-label"></label>
+            <input asp-for="Address" class="form-control" placeholder="المدينة، المنطقة" />
+            <span asp-validation-for="Address" class="text-danger-msg"></span>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success">
+                <i class="fa-solid fa-check"></i> حفظ البيانات
+            </button>
+            <a asp-action="Index" class="btn btn-outline">
+                <i class="fa-solid fa-xmark"></i> إلغاء
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

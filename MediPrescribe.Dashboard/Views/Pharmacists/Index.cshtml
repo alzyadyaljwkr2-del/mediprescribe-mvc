@@ -1,0 +1,105 @@
+@model IEnumerable<MediPrescribe.Dashboard.Models.PharmacistViewModel>
+@{
+    ViewData["Title"] = "الصيادلة";
+}
+
+<!-- Toolbar -->
+<div class="toolbar-card">
+    <div class="toolbar-right">
+        <span style="font-weight:600; color: var(--text-muted); font-size: 0.85rem;">إدارة الصيادلة - يتم إنشاء الصيادلة من إدارة المستخدمين</span>
+    </div>
+    <div class="toolbar-left">
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="بحث في الصيادلة..." id="searchInput" onkeyup="filterTable()" />
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="table-card">
+    <div class="table-header">
+        <h3>
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+            قائمة الصيادلة
+        </h3>
+    </div>
+    <div class="table-responsive">
+        <table class="data-table" id="pharmacistsTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>اسم الصيدلية</th>
+                    <th>رقم الترخيص</th>
+                    <th>الهاتف</th>
+                    <th>العنوان</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pharmacist in Model)
+                {
+                    <tr>
+                        <td>@pharmacist.Id</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #059669; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">
+                                    @(string.IsNullOrEmpty(pharmacist.PharmacyName) ? "؟" : pharmacist.PharmacyName.Substring(0, 1))
+                                </div>
+                                <span style="font-weight: 600; color: var(--text-main);">@pharmacist.PharmacyName</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="status-badge status-pending">@pharmacist.LicenseNumber</span>
+                        </td>
+                        <td>@(string.IsNullOrEmpty(pharmacist.Phone) ? "غير متوفر" : pharmacist.Phone)</td>
+                        <td>@(string.IsNullOrEmpty(pharmacist.Address) ? "غير متوفر" : pharmacist.Address)</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a asp-action="Details" asp-route-id="@pharmacist.Id" class="action-btn view" title="عرض">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <form asp-action="Delete" asp-route-id="@pharmacist.Id" method="post" style="display: inline;" onsubmit="return confirm('هل أنت متأكد من حذف هذا الصيدلي؟');">
+                                    <button type="submit" class="action-btn delete" title="حذف">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="table-empty">
+                            <i class="fa-solid fa-prescription-bottle-medical"></i>
+                            لا توجد بيانات حالياً
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function filterTable() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById('pharmacistsTable');
+            var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+                for (var j = 0; j < cells.length; j++) {
+                    if (cells[j].textContent.toLowerCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        }
+    </script>
+}

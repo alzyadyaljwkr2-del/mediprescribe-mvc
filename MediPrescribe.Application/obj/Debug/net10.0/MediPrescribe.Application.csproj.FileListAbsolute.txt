@@ -1,0 +1,75 @@
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\bin\Debug\net10.0\MediPrescribe.Application.deps.json
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\bin\Debug\net10.0\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\bin\Debug\net10.0\MediPrescribe.Application.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\bin\Debug\net10.0\MediPrescribe.Domain.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.csproj.AssemblyReference.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfoInputs.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfo.cs
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.csproj.CoreCompileInputs.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPres.EDC760D0.Up2Date
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\refint\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\MediPrescribe.Application.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe . Applicaion\obj\Debug\net10.0\ref\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.deps.json
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.AssemblyReference.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfoInputs.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfo.cs
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.CoreCompileInputs.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPres.EDC760D0.Up2Date
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\refint\MediPrescribe.Application.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\ref\MediPrescribe.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.deps.json
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.AssemblyReference.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfoInputs.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfo.cs
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.CoreCompileInputs.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPres.EDC760D0.Up2Date
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\refint\MediPrescribe.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\ref\MediPrescribe.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.deps.json
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.AssemblyReference.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfoInputs.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfo.cs
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.CoreCompileInputs.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPres.EDC760D0.Up2Date
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\refint\MediPrescribe.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\ref\MediPrescribe.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.deps.json
+D:\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Application.pdb
+D:\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.dll
+D:\MediPrescribe .Api\MediPrescribe.Application\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.AssemblyReference.cache
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfoInputs.cache
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.AssemblyInfo.cs
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.csproj.CoreCompileInputs.cache
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPres.EDC760D0.Up2Date
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\refint\MediPrescribe.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\MediPrescribe.Application.pdb
+D:\MediPrescribe .Api\MediPrescribe.Application\obj\Debug\net10.0\ref\MediPrescribe.Application.dll

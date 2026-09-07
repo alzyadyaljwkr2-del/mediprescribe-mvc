@@ -1,0 +1,33 @@
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.deps.json
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.AssemblyInfoInputs.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.AssemblyInfo.cs
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.csproj.CoreCompileInputs.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\refint\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\ref\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.deps.json
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.AssemblyInfoInputs.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.AssemblyInfo.cs
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.csproj.CoreCompileInputs.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\refint\MediPrescribe.Dashboard.Application.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\ref\MediPrescribe.Dashboard.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.deps.json
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\bin\Debug\net10.0\MediPrescribe.Dashboard.Application.pdb
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.AssemblyInfoInputs.cache
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.AssemblyInfo.cs
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.csproj.CoreCompileInputs.cache
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\refint\MediPrescribe.Dashboard.Application.dll
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\MediPrescribe.Dashboard.Application.pdb
+D:\MediPrescribe .Api\MediPrescribe.Dashboard.Application\obj\Debug\net10.0\ref\MediPrescribe.Dashboard.Application.dll

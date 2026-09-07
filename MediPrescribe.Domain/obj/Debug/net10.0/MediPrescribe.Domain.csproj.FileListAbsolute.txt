@@ -1,0 +1,44 @@
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.deps.json
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfoInputs.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfo.cs
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.csproj.CoreCompileInputs.cache
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\refint\MediPrescribe.Domain.dll
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.pdb
+C:\Users\MC\source\repos\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\ref\MediPrescribe.Domain.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.deps.json
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfoInputs.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfo.cs
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.csproj.CoreCompileInputs.cache
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\refint\MediPrescribe.Domain.dll
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\all my project\asmaa\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\ref\MediPrescribe.Domain.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.deps.json
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfoInputs.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfo.cs
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.csproj.CoreCompileInputs.cache
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\refint\MediPrescribe.Domain.dll
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\all my project\asmaa\api+app\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\ref\MediPrescribe.Domain.dll
+D:\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.deps.json
+D:\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.dll
+D:\MediPrescribe .Api\MediPrescribe.Domain\bin\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfoInputs.cache
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.AssemblyInfo.cs
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.csproj.CoreCompileInputs.cache
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.dll
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\refint\MediPrescribe.Domain.dll
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\MediPrescribe.Domain.pdb
+D:\MediPrescribe .Api\MediPrescribe.Domain\obj\Debug\net10.0\ref\MediPrescribe.Domain.dll
